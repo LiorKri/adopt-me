@@ -1,0 +1,25 @@
+form(#addform='ngForm' (ngsubmit)='onAddAnimal(addForm)')
+  br
+  h2.text-white.mb-4 Fill the following details
+  br
+  .form-group
+    input#name.form-control.py-4(type='text' ngmodel='' name='name' placeholder='Name' required='')
+  .form-group
+    select#animalKind.form-select(ngmodel='' name='animalKind' required='')
+      option(value='dog') Dog
+      option(value='cat') Cat
+  .form-group
+    input#age.form-control.py-4(type='text' ngmodel='' name='age' placeholder='Age' required='')
+  .form-group
+    input#description.form-control.py-3(type='text' ngmodel='' name='description' placeholder='Tell us more about the pet' required='')
+  .form-group
+    input#imageUrl.form-control.py-4(type='text' ngmodel='' name='imageUrl' placeholder='Pet image (enter a URL)' required='')
+    .form-text.text-white-50
+      | Use an image URL (ex. http://www.pngmart.com/files/16/Puppy-Dog-Face-PNG-Pic.png)
+  .form-group
+    input#contactName.form-control.py-4(type='text' ngmodel='' name='contactName' placeholder='Your name' required='')
+  .form-group
+    input#contactPhone.form-control.py-4(type='text' ngmodel='' name='contactPhone' placeholder='Phone' required='')
+  br
+  .form-group.d-flex.align-items-center.justify-content-between
+    button.btn.btn-primary([disabled]='addForm.invalid' type='submit') Post!

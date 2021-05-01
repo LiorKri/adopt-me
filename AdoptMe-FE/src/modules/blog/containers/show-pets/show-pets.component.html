@@ -1,0 +1,29 @@
+<sb-layout-blog>
+    <sb-clean-blog-header backgroundImage='url("assets/img/adopt-home.jpg")' heading="Meet Our Pets" subHeading="" [siteHeading]="true"></sb-clean-blog-header>
+    <ng-container>
+        <h3 class="heading mt-5 text-center">Please enter any value to search a pet</h3>
+        <form class="d-flex justify-content-center px-5">
+            <div class="search"> <input type="search-input" (ngModelChange)="searchAnimals(key.value)" #key="ngModel" ngModel
+                   name="key" id="searchName" class="form-control mr-sm-2" placeholder="Search pets..." required><i class="fa fa-search"></i></div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-6 col-xl-3" *ngFor="let animal of animals">
+                <div class="card-group">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{animal?.imageUrl}}" class="card-img-top" alt="">
+                        <div class="card-body">
+                            <h5 class="card-title">{{animal?.name}}</h5>
+                            <p class="card-text">{{animal?.description}}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Age : {{animal?.age}}</li>
+                            <li class="list-group-item">{{animal?.contactName}}</li>
+                            <li class="list-group-item">{{animal?.contactPhone}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</sb-layout-blog>

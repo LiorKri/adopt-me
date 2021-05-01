@@ -1,0 +1,19 @@
+form(#addform='ngForm' (ngsubmit)='onAddRequests(addForm)')
+  br
+  h2.text-white.mb-4 Fill your details and we will call you back
+  br
+  .form-group
+    input#firstName.form-control.py-4(type='text' ngmodel='' name='firstName' placeholder='First Name' required='')
+  .form-group
+    input#lastName.form-control.py-4(type='text' ngmodel='' name='lastName' placeholder='Last Name' required='')
+  .form-group
+    input#email.form-control.py-4(type='text' ngmodel='' name='email' placeholder='Email' required='')
+  .form-group
+    input#phone.form-control.py-4(type='text' ngmodel='' name='phone' placeholder='Phone' required='')
+  .form-group
+    input#city.form-control.py-4(type='text' ngmodel='' name='city' placeholder='City' required='')
+  .form-group
+    input#address.form-control.py-4(type='text' ngmodel='' name='address' placeholder='Address' required='')
+  br
+  .form-group.d-flex.align-items-center.justify-content-between
+    button.btn.btn-primary([disabled]='addForm.invalid' type='submit') Send

@@ -1,0 +1,16 @@
+<sb-layout-auth
+    ><div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <h5 class="text-white text-center mt-5">Enter your details</h5>
+                <form class="form-inline justify-content-between" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <input class="form-control py-4 mr-2 my-2" id="inputUser" data-cy="passwordInput" type="text" formControlName="email" [class.is-valid]="userControlValid" [class.is-invalid]="userControlInvalid" placeholder="Email"/>
+                    <input class="form-control py-4 mr-2 my-2" id="inputPassword" data-cy="passwordInput" type="password" formControlName="password" [class.is-valid]="passwordControlValid" [class.is-invalid]="passwordControlInvalid" placeholder="Password"/>
+                    <button class="btn btn-primary" data-cy="loginButton" type="submit" [disabled]="loginForm.invalid">Login</button>
+                    <div class="invalid-feedback" *ngIf='passwordControl.hasError("required")'>Password required.</div>
+                    <div class="invalid-feedback" *ngIf='passwordControl.hasError("minlength")'>Password must be at least 8 characters.</div>
+                </form>
+            </div>
+        </div>
+    </div></sb-layout-auth
+>
